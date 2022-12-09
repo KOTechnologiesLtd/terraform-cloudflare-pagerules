@@ -1,5 +1,5 @@
 resource "cloudflare_page_rule" "pagerule" {
-  zone_id  = data.terraform_remote_state.zone.outputs.zone_id
+  zone_id  = var.zoneid
   for_each = var.pagerules
   priority = (index(keys(var.pagerules), each.key) + 1)
   status   = lookup(each.value, "status", "")
