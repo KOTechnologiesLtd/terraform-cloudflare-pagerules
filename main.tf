@@ -1,5 +1,5 @@
 resource "cloudflare_page_rule" "pagerule" {
-  zone_id  = var.zoneid
+  zone_id  = var.zone_id
   for_each = var.pagerules
   priority = (index(keys(var.pagerules), each.key) + 1)
   status   = lookup(each.value, "status", "")

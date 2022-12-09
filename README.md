@@ -7,7 +7,7 @@ This Terraform module manages Cloudflare Pagerules.
 ```hcl
 module "pagerules" {
   source = " KOTechnologiesLtd/pagerules/cloudflare"
-
+  zone_id = ""a1d23s74uhd5s5a213e23wq"
   pagerules = {
     "001" = {
       priority = 1,
